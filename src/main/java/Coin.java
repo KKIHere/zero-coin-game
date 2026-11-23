@@ -18,7 +18,7 @@ public class Coin {
 
     public void draw(GameApp app) {
         if (collected) return;
-        app.fill(Color.GOLD);
+        app.fill(Color.rgb(255,0,0));
         app.rect(x, y, size, size);
     }
 }
