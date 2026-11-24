@@ -1,3 +1,8 @@
+    /**
+     * view() gives the calling class an Element.
+     * setScore(int) displays the supplied score.
+     * setCaption(String) changes the caption while retaining the displayed value.
+     */
 import zero.ui.Element;
 import zero.ui.Label;
 
