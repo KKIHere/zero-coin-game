@@ -1,4 +1,3 @@
-import zero.Key;
 import zero.Color;
 import zero.GameApp;
 import zero.ui.Button;
@@ -10,7 +9,7 @@ public class Main extends GameApp {
     private Coin[] coins;
     private boolean won;
     private int points;
-    private Label scoreLabel;
+    private ScoreDisplay score;
     private Label message;
 
     @Override public void settings() {
@@ -20,11 +19,11 @@ public class Main extends GameApp {
 
     @Override public void setup() {
         input = new PlayerInput(this);
-        scoreLabel = new Label("");
+        score = new ScoreDisplay();
         message = new Label("");
         var restartButton = new Button("Restart");
         restartButton.onClick(() -> restart());
-        controls(new Row(12, scoreLabel, message, restartButton));
+        controls(new Row(12, score.view(), message, restartButton));
         restart();
     }
     public void restart() {
@@ -35,7 +34,7 @@ public class Main extends GameApp {
         won = false;
         message.setText("Collect all " + coins.length + " coins.");
         points = 0;
-        scoreLabel.setText("Score: 0");
+        score.setScore(points);
         message.setText("Collect the gold square.");
         showGame();
     }
@@ -48,7 +47,7 @@ public class Main extends GameApp {
             if (!each.isCollected() && each.touches(player)) {
                 each.collect();
                 points++;
-                scoreLabel.setText("Score: " + points);
+                score.setScore(points);
             }
         }
         if (points == coins.length) {
