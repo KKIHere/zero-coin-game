@@ -6,7 +6,7 @@
 - Caption "Coins" set in setup: collected a coin.
   Expected: "Coins: 1". Observed: expectation correct.
 - Caption changed inside the coin-collection block after setScore:
-  Expected: "Coins: 1" (value kept). Observed:  expectation correct.
+  Expected: "Coins: 1" (value kept). Observed:  expectation correct.ii
 - Restored caption "Score": collected one coin.
   Expected: "Score: 1". Observed: expectation correct.
 - Finished and restarted the game twice. Expected: display resets and
