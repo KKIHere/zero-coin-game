@@ -1,15 +1,19 @@
-import zero.Color;
+
 import zero.GameApp;
+import zero.ImageRegion;
 
 public class Player {
     private double x;
     private double y;
-    private final double size = 24;
+    private final double size = 48;
     private final double speed = 180;
+    private final ImageRegion image;
+    
 
-    public Player(double startX, double startY) {
+    public Player(double startX, double startY, ImageRegion image) {
         x = startX;
         y = startY;
+        this.image = image;
     }
 
     public void update(int horizontal, int vertical, double seconds,
@@ -24,7 +28,6 @@ public class Player {
                 && y + size >= otherY && y <= otherY + otherSize;
     }
     public void draw(GameApp app) {
-        app.fill(Color.rgb(0, 87, 250));
-        app.rect(x, y, size, size);
+        app.image(image, x, y, size, size);
     }
 }

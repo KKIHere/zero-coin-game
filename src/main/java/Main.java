@@ -1,5 +1,6 @@
 import zero.Color;
 import zero.GameApp;
+import zero.ImageRegion;
 import zero.ui.Button;
 import zero.ui.Label;
 import zero.ui.Row;
@@ -11,6 +12,7 @@ public class Main extends GameApp {
     private int points;
     private ScoreDisplay score;
     private Label message;
+    private ImageRegion playerImage;
 
     @Override public void settings() {
         padding(20);
@@ -18,6 +20,8 @@ public class Main extends GameApp {
     }
 
     @Override public void setup() {
+        var sheet = loadImage("/media-demo/player.png");
+        playerImage = imageRegion(sheet, 0, 0, 32, 32);
         input = new PlayerInput(this);
         score = new ScoreDisplay();
         score.setCaption("Score");
@@ -28,7 +32,7 @@ public class Main extends GameApp {
         restart();
     }
     public void restart() {
-        player = new Player(40, 180);
+        player = new Player(40, 180,playerImage);
         coins = new Coin[] {
             new Coin(220, 180), new Coin(420, 80), new Coin(540, 300)
         };
