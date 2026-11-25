@@ -4,6 +4,7 @@ import zero.ImageRegion;
 import zero.ui.Button;
 import zero.ui.Label;
 import zero.ui.Row;
+import zero.Sound;
 public class Main extends GameApp {
     private Player player;
     private PlayerInput input;
@@ -13,6 +14,7 @@ public class Main extends GameApp {
     private ScoreDisplay score;
     private Label message;
     private ImageRegion playerImage;
+    private Sound chime;
 
     @Override public void settings() {
         padding(20);
@@ -29,6 +31,8 @@ public class Main extends GameApp {
         var restartButton = new Button("Restart");
         restartButton.onClick(() -> restart());
         controls(new Row(12, score.view(), message, restartButton));
+        chime = loadSound("/media-demo/chime.wav");
+        chime.setVolume(0.25);
         restart();
     }
     public void restart() {
@@ -53,6 +57,8 @@ public class Main extends GameApp {
                 each.collect();
                 points++;
                 score.setScore(points);
+                chime.stop();
+                chime.play();
             }
         }
         if (points == coins.length) {
