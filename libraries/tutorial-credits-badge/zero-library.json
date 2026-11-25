@@ -1,0 +1,18 @@
+{
+  "schema": 2,
+  "kind": "library",
+  "slug": "tutorial-credits-badge",
+  "version": "0.1.0",
+  "title": "Tutorial practice: CreditBadge",
+  "description": "From zero tutorial's lesson 11, MIT license",
+  "license": "MIT",
+  "libraryKind": "widget",
+  "coreRequirement": {
+    "minVersion": "0.3.0",
+    "maxExclusive": "0.4.0"
+  },
+  "coreInput": {
+    "version": "0.3.0",
+    "sourceSha256": "7f356f4a76aaa3b015ff8c69fc7615c784fd66d7293cc67e3e0ecba5dfa1b5e0"
+  }
+}

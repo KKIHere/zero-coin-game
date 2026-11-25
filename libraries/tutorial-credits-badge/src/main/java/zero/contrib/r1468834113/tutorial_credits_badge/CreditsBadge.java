@@ -1,3 +1,5 @@
+package zero.contrib.r1468834113.tutorial_credits_badge;
+
 import zero.ui.Label;
 
 /** Tutorial practice: copies are expected, not original community utilities. */

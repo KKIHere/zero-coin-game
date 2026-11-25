@@ -22,6 +22,9 @@
       <artifactId>javafx-media</artifactId>
       <version>${javafx.version}</version>
     </dependency>
+      <!-- zero-sharing published libraries -->
+
+    <!-- /zero-sharing published libraries -->
   </dependencies>
   <build>
     <plugins>
@@ -43,6 +46,9 @@
           <mainClass>${app.mainClass}</mainClass>
         </configuration>
       </plugin>
-    </plugins>
+        <!-- zero-sharing source roots -->
+    <plugin><groupId>org.codehaus.mojo</groupId><artifactId>build-helper-maven-plugin</artifactId><version>3.6.1</version><executions><execution><id>zero-local-libraries</id><phase>generate-sources</phase><goals><goal>add-source</goal></goals><configuration><sources><source>${project.basedir}/libraries/tutorial-credits-badge/src/main/java</source></sources></configuration></execution><execution><id>zero-local-library-resources</id><phase>generate-resources</phase><goals><goal>add-resource</goal></goals><configuration><resources><resource><directory>${project.basedir}/libraries/tutorial-credits-badge/src/main/resources</directory></resource></resources></configuration></execution></executions></plugin>
+    <!-- /zero-sharing source roots -->
+  </plugins>
   </build>
 </project>

@@ -2,3 +2,4 @@
 /.zero/web-export/
 *.class
 .DS_Store
+.zero-sharing-recovery/

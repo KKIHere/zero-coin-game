@@ -1,3 +1,5 @@
+
+import zero.contrib.r1468834113.tutorial_credits_badge.CreditsBadge;
 import zero.Color;
 import zero.GameApp;
 import zero.ui.Button;

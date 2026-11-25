@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "libraries": [
+    {
+      "slug": "tutorial-credits-badge",
+      "repositoryId": "1468834113",
+      "mode": "local",
+      "version": "0.1.0"
+    }
+  ]
+}
